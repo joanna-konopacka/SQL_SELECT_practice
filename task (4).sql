@@ -3,9 +3,6 @@ Odnajdź średnią ocenę w każdym przedmiocie dla studenta id = 3 z tabeli pup
 
 Eugen Tsven: Geography - 10
 Eugen Tsven: Math - 10
-Eugen Tsven: History - 9
-Eugen Tsven: Economics - 11
-
 ____________________________________pupil_____________________________________________________
 | id  |	first_name | last_name | sex    | birth_date | mother_phone  | father_phone  | city  |
 | 1   |	Eugen      | Tsven     | male   | 2000-12-01 | +380967826174 | +380998161172 | Kyiv  |
@@ -19,9 +16,12 @@ _________________________scoreboard___________________________
 | 167 | 10        | Math         | 9    | SECOND
 */
 
-SELECT CONCAT(pupil.first_name,' ', pupil.last_name,': ',scoreboard.subject,' - ',AVG (scoreboard.mark)) AS pupil_mark
-FROM pupil
-INNER JOIN scoreboard
-ON pupil.id= scoreboard.pupil_id
-WHERE pupil.id= 3
-GROUP BY scoreboard.subject;
+SELECT CONCAT (p.first_name, ' ', p.last_name, ':', s.subject, '-', s.mark) AS pupil_mark
+FROM pupil p
+INNER JOIN scoreboard s
+ON p.id = s.pupil_id
+WHERE s.pupil_id = 3
+GROUP BY s.subject
+
+
+

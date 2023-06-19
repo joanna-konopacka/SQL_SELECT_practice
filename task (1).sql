@@ -17,8 +17,8 @@ __________________________product_____________________
 | 8  | Flour       | 20       | 60      | 4      
 */
 
-SELECT CONCAT (product.name,' - ',product.amount,' units') AS product_information
+SELECT CONCAT(product.name,"-", product.amount,"units") AS product_information
 FROM product
 INNER JOIN category
 ON category.id= product.category_id
-WHERE category.name= 'Beverages';
+WHERE c.name='Beverages'
