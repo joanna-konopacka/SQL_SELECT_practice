@@ -10,5 +10,5 @@ _______________________dish_______________________
 | 10  | Omelette     | 85    | 180    | 190      | */
 
 
-SELECT CONCAT(name, ': ', price, ' UAH') AS dish_information
-FROM dish;
+SELECT CONCAT (name,':', price,' 'UAH) AS dish_information
+FROM dish
