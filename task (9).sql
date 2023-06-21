@@ -14,12 +14,9 @@ __________________________product_____________________
 | 8  | Flour       | 20       | 60      | 4           |
 
 */
-
-SELECT DISTINCT category.name
+SELECT DISTINCT c.name
 FROM category
 INNER JOIN product
-ON category.id= product.category_id
-WHERE product.price < 300;
-
-
+ON c.id = p.category_id
+WHERE p.price < 300
 
