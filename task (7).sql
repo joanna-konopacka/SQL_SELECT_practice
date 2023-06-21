@@ -15,6 +15,7 @@ __________________________product_____________________
 
 SELECT SUM(product.amount) AS total_amount
 FROM product
-INNER JOIN category 
-ON category.id = product.category_id
-WHERE category.name = 'Seafood';
+INNER JOIN category
+ON product.category_id = category.id
+WHERE category.name = 'Seafood'
+
