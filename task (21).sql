@@ -6,6 +6,7 @@ ____________________________________staff_______________________________________
 ...................................................................................................................................
 | 8   | Yuriy      | Dyachuk   | male   | 1988-12-0  */
 
-SELECT EXTRACT(YEAR FROM date_of_hiring) AS year, COUNT(*) AS number_of_staff
+SELECT EXTRACT (YEAR FROM date_of_hiring) AS year, COUNT (*) AS number_of_staff
 FROM staff
-GROUP BY year;
+GROUP BY year
+
