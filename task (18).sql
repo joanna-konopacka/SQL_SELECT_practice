@@ -16,13 +16,12 @@ _________________________scoreboard___________________________
 | id  | pupil_id  | subject      | mark | semester        | year |
 | 4   | 1         | Geography    | 10   | FIRST SEMESTER  | 2015 |
 ...............................................................
-| 167 | 10        | Math         | 9    | SE
+| 167 | 10        | Math         | 9    | SE */
 
-*/
-SELECT scoreboard.subject AS subject, scoreboard.year AS year, AVG(scoreboard.mark) AS average_mark
+SELECT s.subject AS subject, s.year AS year, AVG (s.mark) AS average_mark
 FROM scoreboard
-INNER JOIN pupil 
-ON pupil.id = scoreboard.pupil_id
-WHERE pupil.birth_date > '2005-01-01'
-GROUP BY scoreboard.subject, scoreboard.year
-ORDER BY scoreboard.subject ASC, scoreboard.year DESC;
+INNER JOIN pupil
+ON pupil.id = s.pupil_id
+WHERE p.birth_date > '2005-01-01';
+ORDER BY s.subject ASC, s.year DESC
+GROUP BY s.subject
