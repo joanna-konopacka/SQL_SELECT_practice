@@ -16,8 +16,10 @@ __________________________product_____________________
 | 8  | Flour       | 20       | 60      | 4 
 
 */
-SELECT MIN (product.price) AS min_price, category.name AS category_name
-FROM product
-INNER JOIN category
-ON category.id= product.category_id
-GROUP BY category.name;
+SELECT c.name AS category_name, MIN(p.price) AS min_price
+FROM category
+INNER JOIN product
+ON c.id = p.category_id
+GROUP BY c.name;
+
+
