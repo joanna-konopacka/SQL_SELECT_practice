@@ -15,8 +15,10 @@ __________________________________employee______________________________
 
  */
 
-SELECT employee.first_name, employee.last_name, department.name
+SELECT e.first_name, e.last_name, d.department_id
 FROM employee
-INNER JOIN department 
-ON employee.department_id = department.id
-WHERE employee.last_name LIKE '%n%' AND department.name IS NOT NULL;
+INNER JOIN department
+ON department.id = employee.department_id
+WHERE employee.last_name LIKE 'n%' AND department.name IS NOT NULL
+
+
