@@ -16,11 +16,12 @@ ___________________________scoreboard_____________________________
 | 167 | 10        | Math         | 9    | SECOND SEMESTER | 2020
 */
 
-
-SELECT scoreboard.subject AS subject, AVG(scoreboard.mark) AS average_mark
+SELECT s.subject AS subject, AVG (s.mark) AS average_mark
 FROM scoreboard
-INNER JOIN pupil 
-ON pupil.id = scoreboard.pupil_id
-WHERE pupil.first_name = 'Anna' AND pupil.last_name = 'Ivaniuk'
-GROUP BY scoreboard.subject
-ORDER BY average_mark DESC;
+INNER JOIN pupil
+ON p.id = s.pupil_id
+WHERE p.first_name = 'Anna' AND p.last_name = 'Ivaniuk'
+GROUP BY s.subject
+ORDER BY average_mark DESC
+
+
