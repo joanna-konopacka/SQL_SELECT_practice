@@ -18,10 +18,10 @@ __________________________________employee______________________________
 .........................................................................
 | 22 | Adam        | Fripp       | 8             | 2021-03-17
 */
-SELECT department.name AS department_name, AVG (employee.salary) AS average_salary, COUNT (*) AS
-number_of_employees
+SELECT d.name AS department_name, AVG (e.salary) AS average_salary, COUNT(*) AS number_of_employees 
 FROM employee
 INNER JOIN department
-ON department.id = employee.department_id
-GROUP BY department_name;
+ON d.id = e.department_id
+GROUP BY d.name;
+
 
