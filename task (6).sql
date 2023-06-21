@@ -15,8 +15,16 @@ __________________________________employee______________________________
 
 */
 
+SELECT e.first_name, e.last_name, d.name AS department_name
+FROM employee
+INNER JOIN department
+ON department.id = employee.department_id
+WHERE department.id IN (2,7);
+
+/*
 SELECT employee.first_name, employee.last_name, department.name AS department_name
 FROM employee
 INNER JOIN department
 ON employee.department_id = department.id
 WHERE department.id = 2 OR department.id = 7;
+*/
