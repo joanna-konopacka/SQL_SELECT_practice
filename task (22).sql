@@ -6,6 +6,8 @@ ____________________________________pupil_______________________________________
 ..............................................................................................
 | 10  | Inna       | Kostenko  | female | 2009-10- */
 
-SELECT COUNT(*) number_of_pupils
+
+SELECT COUNT(*) AS number_of_pupils
 FROM pupil
-WHERE EXTRACT(MONTH FROM birth_date)= EXTRACT (MONTH FROM CURRENT_DATE);
+WHERE EXTRACT(MONTH FROM birth_date) = EXTRACT (MONTH FROM CURRENT_DATE)
+
