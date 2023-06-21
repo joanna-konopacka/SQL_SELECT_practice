@@ -1,9 +1,7 @@
 /*
-
 Przed Tobą dwie tabele, pupil i scoreboard. Uzyskaj średnią ocenę z każdego przedmiotu dla studentów z Kyiv. Przedstaw rezultat w dwóch kolumnach, subject (nazwy przedmiotów) oraz average mark (średnie oceny). Nazwy przedmiotów posortuj alfabetycznie.
 
 Nie zapomnij o pogrupowaniu rezultatów!
-
 ____________________________________pupil_____________________________________________________
 | id  |	first_name | last_name | sex    | birth_date | mother_phone  | father_phone  | city  |
 | 1   |	Eugen      | Tsven     | male   | 2000-12-01 | +380967826174 | +380998161172 | Kyiv  |
@@ -14,14 +12,12 @@ _________________________scoreboard___________________________
 | id  | pupil_id  | subject      | mark | semester        | year |
 | 4   | 1         | Geography    | 10   | FIRST SEMESTER  | 2015 |
 ...............................................................
-| 167 | 10        | Math         | 9    | SECOND SEMESTER | 2020 |
+| 167 | 10        | Math         | 9    | SECOND SEMESTER | 2020 | */
 
-
-*/
-SELECT scoreboard.subject AS subject, AVG (scoreboard.mark) AS average_mark
+SELECT s.subject AS subject, AVG(s.mark) AS avrage mark
 FROM scoreboard
 INNER JOIN pupil
-ON pupil.id= scoreboard.pupil_id
-WHERE pupil.city= 'Kyiv'
-GROUP BY scoreboard.subject
-ORDER BY scoreboard.subject;
+ON s.pupil_id = p.id
+WHERE p.city = 'Kyiv'
+GROUP BY s.subject
+ORDER BY s.subject ASC
