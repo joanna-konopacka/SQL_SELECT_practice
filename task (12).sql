@@ -16,7 +16,10 @@ __________________________________employee______________________________
 | 22 | Adam        | Fripp       | 8             | 2021-03-17  | 12000  |
 */
 
-SELECT department.name AS department_name, COUNT(*) AS number_of_employees
+
+SELECT d.name AS department_name COUNT(e.id) AS number_of_employees
 FROM department
 INNER JOIN employee
-ON department.id= employee.department_id
+ON d.id = e.department_id
+GROUP BY d.name
+
