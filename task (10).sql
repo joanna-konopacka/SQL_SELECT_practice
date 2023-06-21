@@ -16,9 +16,9 @@ __________________________________employee______________________________
 | 22 | Adam        | Fripp       | 8             | 2021-03-17  | 12000  |
 */
 
-SELECT MAX( employee.salary) AS max_salary, department.name AS department_name
-FROM employee
-INNER JOIN department 
-ON department.id= employee.department_id
-GROUP BY department.name ;
+SELECT d.name AS department_name,  MAX(e.salary) AS max_salary
+FROM department
+INNER JOIN employee
+ON d.id=e.department_id
+GROUP BY d.name;
 
