@@ -16,10 +16,13 @@ __________________________________employee______________________________
 | 22 | Adam        | Fripp       | 8             | 2021-03-17 
 */
 
-SELECT department.name AS department_name, employee.first_name AS first_name, employee.last_name AS last_name
+SELECT d.name AS department_name, e.first_name AS first_name, e.last_name AS last_name
 FROM department
 RIGHT JOIN employee
-ON department.id = employee.department_id;
+ON d.id = e.department_id
+GROUP BY d.department_name
+
+
 
 
 
