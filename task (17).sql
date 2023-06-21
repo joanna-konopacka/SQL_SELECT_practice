@@ -15,11 +15,11 @@ _________________________scoreboard___________________________
 | id  | pupil_id  | subject      | mark | semester        | year |
 | 4   | 1         | Geography    | 10   | FIRST SEMESTER  | 2015 |
 ...............................................................
-| 167 | 10        | Math         | 9    | SECOND SEMESTER | 2
-*/
+| 167 | 10        | Math         | 9    | SECOND SEMESTER | 2  */
 
-SELECT pupil.first_name AS first_name,pupil.last_name AS last_name, AVG (scoreboard.mark) AS average_mark
+SELECT p.first_name AS first_name, p.last_name AS last_name, AVG (s.mark) AS average_mark 
 FROM pupil
 INNER JOIN scoreboard
-ON pupil.id= scoreboard.pupil_id
-GROUP BY pupil.id
+ON p.id = s.pupil_id
+GROUP BY p.id
+
